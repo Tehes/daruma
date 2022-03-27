@@ -87,8 +87,8 @@ DARUMA
     position: absolute;
     background-color: hsl(var(--achromatic), 20%);
     border-radius: 50%;
-    width: 2.3vmin;
-    height: 2.3vmin;
+    width: 6%;
+	aspect-ratio: 1/1;
 	min-width: 18px;
 	min-height: 18px;
     opacity: 0;
