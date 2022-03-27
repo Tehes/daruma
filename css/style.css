@@ -1,7 +1,9 @@
 :root {
-  --achromatic: 0, 0%; /* neutral color */
-  --bg-color: hsl(var(--achromatic), 100%);
-  --font-color: hsl(var(--achromatic), 20%);
+    --achromatic: 0, 0%;
+    /* neutral color */
+    --bg-color: hsl(60, 50%, 90%);
+    --bg-input: hsl(60, 50%, 95%);
+    --font-color: hsl(var(--achromatic), 30%);
 }
 
 * {
@@ -12,36 +14,128 @@
 
 html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-     margin:0;
-	 padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: var(--bg-color);
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    margin:0;
-	padding:0;
-	color: var(--font-color);
-	font-size: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--font-color);
+    font-size: 100%;
+    font-family: 'Merriweather', serif;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    margin-bottom: 2rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+    background-color: var(--bg-input);
+    width: 40vmin;
+    font-family: 'Merriweather', serif;
 }
 
 /*
 -------------------------------------------------------------------
-YOUR SECTIONS
+MAIN
 -------------------------------------------------------------------
 */
+main {
+    margin: 5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+/*
+-------------------------------------------------------------------
+DARUMA
+-------------------------------------------------------------------
+*/
+#daruma {
+    position: relative;
+}
+
+#daruma img {
+    width: 40vmin;
+}
+
+#daruma div {
+    position: absolute;
+    background-color: hsl(var(--achromatic), 20%);
+    border-radius: 50%;
+    width: 2.3vmin;
+    height: 2.3vmin;
+    opacity: 0;
+    cursor: crosshair;
+}
+
+#daruma div.visible {
+    opacity: 1;
+}
+
+#daruma .leftEye {
+    top: 14.55vmin;
+    left: 12.75vmin;
+}
+
+#daruma .rightEye {
+    top: 14.55vmin;
+    right: 12.2vmin;
+}
+
+/*
+-------------------------------------------------------------------
+WISH
+-------------------------------------------------------------------
+*/
+#wish {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    margin: 4vmin;
+    padding: 1vmin;
+    font-size: 3rem;
+    border-bottom: 2px dashed var(--font-color);
+}
+
+#wish:hover {
+    background-color: var(--bg-input);
+}
+
+/*
+-------------------------------------------------------------------
+HOWTO
+-------------------------------------------------------------------
+*/
+ol {
+    margin: 0 1.5rem;
+    padding: 0;
+    list-style-position: outside;
+}
+
+ol li {
+    margin: 1rem 0;
+}
 
 /*
 -------------------------------------------------------------------
 MEDIA QUERIES
 -------------------------------------------------------------------
 */
-
 @media (prefers-color-scheme: dark) {
-	:root {
-		--bg-color: hsl(var(--achromatic), 10%);
-		--font-color: hsl(var(--achromatic), 80%);
-	}
+    :root {
+        --bg-color: hsl(var(--achromatic), 10%);
+        --font-color: hsl(var(--achromatic), 80%);
+    }
 }
