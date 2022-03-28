@@ -34,22 +34,7 @@ h3 {
     font-size: 2rem;
 }
 
-select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem;
-    font-size: 1rem;
-    background-color: var(--bg-input);
-    width: 40vmin;
-    font-family: 'Merriweather', serif;
-	min-width: 350px;
-	color: var(--font-color);
-}
-
-a:link {
+a:link, a:visited {
     color: inherit;
     text-decoration: none;
 }
@@ -115,7 +100,7 @@ SIDE NAVIGATION
 */
 
 aside {
-  height: 100%;
+  min-height: 100vh;
   width: 350px;
   position: absolute;
   z-index: 1000;
@@ -157,11 +142,27 @@ main {
 	flex: 1 0 auto;
 }
 
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    margin-bottom: 2rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+    background-color: var(--bg-input);
+    width: 40vmin;
+    font-family: 'Merriweather', serif;
+	min-width: 350px;
+	color: var(--font-color);
+}
+
 /*
 -------------------------------------------------------------------
 DARUMA
 -------------------------------------------------------------------
 */
+
 #daruma {
     position: relative;
 }
@@ -202,6 +203,7 @@ DARUMA
 WISH
 -------------------------------------------------------------------
 */
+
 #wish {
     font-family: 'Amatic SC', cursive;
     font-weight: 700;
