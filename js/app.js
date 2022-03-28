@@ -9,18 +9,18 @@ var leftEye = document.querySelector(".leftEye");
 var rightEye = document.querySelector(".rightEye");
 var wish = document.querySelector("#wish");
 var colorSelector = document.querySelector("#colorSelector");
+var hamburgerIcon = document.querySelector("#hamburger");
+var sidebar = document.querySelector("aside");
 
 /* --------------------------------------------------------------------------------------------------
 functions
 ---------------------------------------------------------------------------------------------------*/
 function paintEye() {
-    event.currentTarget.classList.add("visible");
+    event.currentTarget.classList.toggle("visible");
 }
 
 function saveWish() {
-    event.currentTarget.contentEditable = false;
-    event.currentTarget.classList.add("entered");
-    wish.removeEventListener("click", enterWish, false);
+
 }
 
 function changeColor() {
@@ -36,7 +36,12 @@ function init() {
     rightEye.addEventListener("click", paintEye, false);
     wish.addEventListener("blur", saveWish, false);
     colorSelector.addEventListener("change", changeColor, false);
+    hamburgerIcon.addEventListener("click", toggleNav, false);
 }
+
+function toggleNav() {
+        sidebar.classList.toggle("open");
+    }
 
 /* --------------------------------------------------------------------------------------------------
 public members, exposed with return statement

@@ -56,11 +56,99 @@ a:link {
 
 /*
 -------------------------------------------------------------------
+HEADER
+-------------------------------------------------------------------
+*/
+
+header {
+    position: absolute;
+    z-index: 2000;
+    top: 20px;
+    left: 20px;
+}
+
+/*
+-------------------------------------------------------------------
+HAMBURGER-ICON
+-------------------------------------------------------------------
+*/
+
+label.hamburger {
+   display: block;
+   width: 75px;
+   height: 50px;
+   position: relative;
+   border-radius: 4px;
+}
+
+input#hamburger {display:none}
+
+.line {
+   position: absolute;
+   height: 4px; width: 55px;
+   background: var(--font-color); border-radius: 2px;
+   display: block;
+   transition: 0.5s;
+   transform-origin: center;
+}
+
+.line:nth-child(1) { top: 12px; }
+.line:nth-child(2) { top: 24px; }
+.line:nth-child(3) { top: 36px; }
+
+#hamburger:checked + .hamburger .line:nth-child(1){
+   transform: translateY(12px) rotate(-45deg);
+}
+
+#hamburger:checked + .hamburger .line:nth-child(2){
+   opacity:0;
+}
+
+#hamburger:checked + .hamburger .line:nth-child(3){
+   transform: translateY(-12px) rotate(45deg);
+}
+
+/*
+-------------------------------------------------------------------
+SIDE NAVIGATION
+-------------------------------------------------------------------
+*/
+
+aside {
+  height: 100%;
+  width: 350px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: -350px;
+  background-color: hsla(60, 50%, 95%, 0.95);
+  padding-top: 90px;
+  padding-left: 30px;
+  padding-right: 10px;
+  transition: 0.5s;
+}
+
+.open {
+    left: 0;
+}
+
+ol {
+    margin: 0 1.5rem;
+    padding: 0;
+    list-style-position: outside;
+}
+
+ol li {
+    margin: 1rem 0;
+}
+
+/*
+-------------------------------------------------------------------
 MAIN
 -------------------------------------------------------------------
 */
 main {
-    margin: 5vmin;
+    margin: 90px 5vmin 5vmin 5vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,22 +214,6 @@ WISH
 
 #wish:hover {
     background-color: var(--bg-input);
-}
-
-/*
--------------------------------------------------------------------
-HOWTO
--------------------------------------------------------------------
-*/
-
-ol {
-    margin: 0 1.5rem;
-    padding: 0;
-    list-style-position: outside;
-}
-
-ol li {
-    margin: 1rem 0;
 }
 
 /*
