@@ -218,6 +218,10 @@ WISH
     background-color: var(--bg-input);
 }
 
+#wish:empty::before {
+  content: "Schreibe deinen Wunsch hier auf";
+}
+
 /*
 -------------------------------------------------------------------
 FOOTER
