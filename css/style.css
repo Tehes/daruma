@@ -61,9 +61,19 @@ HEADER
 
 header {
     position: absolute;
-    z-index: 2000;
-    top: 10px;
-    left: 20px;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+header img {
+    filter: invert(30%);
+}
+
+header img:hover {
+    filter: invert(45%);
 }
 
 /*
@@ -78,6 +88,7 @@ label.hamburger {
    height: 50px;
    position: relative;
    border-radius: 4px;
+   z-index: 2000;
 }
 
 input#hamburger {display:none}
@@ -138,7 +149,7 @@ ol {
 }
 
 ol li {
-    margin: 1rem 0;
+    margin: 0.8rem 0;
 }
 
 /*
@@ -221,18 +232,24 @@ WISH
 #wish {
     font-family: 'Amatic SC', cursive;
     font-weight: 700;
+    font-size: 3rem;
     margin: 4vmin;
     padding: 1vmin;
-    font-size: 3rem;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
     border-bottom: 2px dashed var(--font-color);
-	min-width: 350px;
+}
+
+#wish span {
+    margin-right: 1vmin;
 }
 
 #wish:hover {
     background-color: var(--bg-input);
 }
 
-#wish:empty::before {
+#wish span:empty::before {
   content: "Schreibe dein Ziel oder deinen Wunsch hier auf";
 }
 
@@ -250,6 +267,18 @@ footer {
     width: 100%;
     max-width: 100vw;
 	flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    margin: 0 10px;
+    filter: invert(35%);
+}
+
+footer img:hover {
+    filter: invert(45%);
 }
 
 /*

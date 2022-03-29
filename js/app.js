@@ -7,7 +7,7 @@ Variables
 ---------------------------------------------------------------------------------------------------*/
 var leftEye = document.querySelector(".leftEye");
 var rightEye = document.querySelector(".rightEye");
-var wish = document.querySelector("#wish");
+var wishInput = document.querySelector("#wish span");
 var colorSelector = document.querySelector("#colorSelector");
 var hamburgerIcon = document.querySelector("#hamburger");
 var sidebar = document.querySelector("aside");
@@ -30,7 +30,7 @@ function changeColor() {
 
 
 function init() {
-    wish.contentEditable = true;
+    wishInput.contentEditable = true;
     document.addEventListener("touchstart", function() {}, false);
     leftEye.addEventListener("click", paintEye, false);
     rightEye.addEventListener("click", paintEye, false);
