@@ -32,18 +32,6 @@
 		</label>
 		<img src="svg/share.svg" alt="Share Icon" width="50px" height="50px">
 	</header>
-	<aside>
-		<h2>Was ist ein Daruma</h2>
-		<p>Ein Daruma ist ein japanischer Glücksbringer. Optisch orientiert er sich an Bodhidarma, dem Gründer des Zen-Buddhismus. Wenn man sich einen Daruma kauft, oder einen geschenkt bekommt, fokussiert man sich auf ein Ziel welches man erreichen möchte. Das aufgemalte Auge soll zur Zielerreichung motivieren. Es ist immer geöffnet und auf das Ziel konzentriert. Der Daruma wird so aufgestellt, dass man ihn immer im Blick hat.</p>
-		<h2>Wie es funktioniert</h2>
-		<ol>
-			<li>Wähle die Farbe deines Daruma.</li>
-			<li>Schreibe ein Ziel/einen Wunsch auf.</li>
-			<li>Male ein Auge des Daruma aus.</li>
-			<li>Mach diese Seite zu deiner Startseite. So wirst du immer an dein Ziel erinnert.</li>
-			<li>Wenn du dein Ziel erreicht hast, darfst du das zweite Auge ausmalen.</li>
-		</ol>
-	</aside>
 	<main>
 		<select id="colorSelector" name="color">
 			<option value="red">Rot: Allgemeine Glückwünsche</option>
@@ -56,11 +44,23 @@
 		</select>
 		<div id="daruma">
 			<img src="svg/daruma-red.svg" alt="Daruma-Illustration">
-			<div class="leftEye"></div>
-			<div class="rightEye"></div>
+			<div id="leftEye"></div>
+			<div id="rightEye"></div>
 		</div>
-		<div id="wish"><span></span><img src="svg/eye-on.svg" width="40" height="40"></div>
+		<div id="wish"><span contenteditable></span><img src="svg/eye-on.svg" width="40" height="40"></div>
 	</main>
+	<aside>
+		<h2>Was ist ein Daruma</h2>
+		<p>Ein Daruma ist ein japanischer Glücksbringer. Optisch orientiert er sich an Bodhidarma, dem Gründer des Zen-Buddhismus. Wenn man sich einen Daruma kauft, oder einen geschenkt bekommt, fokussiert man sich auf ein Ziel welches man erreichen möchte. Das aufgemalte Auge soll zur Zielerreichung motivieren. Es ist immer geöffnet und auf das Ziel konzentriert. Der Daruma wird so aufgestellt, dass man ihn immer im Blick hat.</p>
+		<h2>Wie es funktioniert</h2>
+		<ol>
+			<li>Wähle die Farbe deines Daruma.</li>
+			<li>Schreibe ein Ziel/einen Wunsch auf.</li>
+			<li>Male ein Auge des Daruma aus.</li>
+			<li>Mach diese Seite zu deiner Startseite. So wirst du immer an dein Ziel erinnert.</li>
+			<li>Wenn du dein Ziel erreicht hast, darfst du das zweite Auge ausmalen.</li>
+		</ol>
+	</aside>
 	<footer>
 		<div><p>hand crafted with &hearts;</p>
 			<p>Icon: <a href="https://www.vecteezy.com/free-vector/world">World Vectors by Vecteezy</a></p>
