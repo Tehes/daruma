@@ -245,6 +245,10 @@ WISH
     margin-right: 1vmin;
 }
 
+#wish span.hide {
+    filter: blur(5px);
+}
+
 #wish:hover {
     background-color: var(--bg-input);
 }
