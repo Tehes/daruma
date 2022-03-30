@@ -1,8 +1,4 @@
 /* --------------------------------------------------------------------------------------------------
-Imports
----------------------------------------------------------------------------------------------------*/
-
-/* --------------------------------------------------------------------------------------------------
 Variables
 ---------------------------------------------------------------------------------------------------*/
 var daruma = document.querySelector("#daruma img");
@@ -50,19 +46,30 @@ function loadStoredValues() {
 	colorSelector.selectedIndex = localStorage.getItem("Daruma_colorIndex") || 0;
 	var color = localStorage.getItem("Daruma_color") || 'red';
 	daruma.src = "svg/daruma-"+ color +".svg";
+    if (localStorage.getItem("Daruma_visited") !== "yes") {
+        openSidebar();
+    }
+}
+
+function openSidebar() {
+    hamburgerIcon.checked = true;
+    sidebar.classList.add("open");
 }
 
 
 function init() {
+    loadStoredValues();
+
     document.addEventListener("touchstart", function() {}, false);
-	loadStoredValues();
-	
+
     leftEye.addEventListener("click", paintEye, false);
     rightEye.addEventListener("click", paintEye, false);
     wishInput.addEventListener("blur", saveWish, false);
     wishButton.addEventListener("click", hideText, false);
     colorSelector.addEventListener("change", changeColor, false);
     hamburgerIcon.addEventListener("click", toggleNav, false);
+
+    localStorage.setItem("Daruma_visited", "yes");
 }
 
 /* --------------------------------------------------------------------------------------------------
