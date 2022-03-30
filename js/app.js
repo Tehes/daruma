@@ -9,7 +9,8 @@ var wishButton = document.querySelector("#wish img");
 var colorSelector = document.querySelector("#colorSelector");
 var hamburgerIcon = document.querySelector("#hamburger");
 var shareIcon = document.querySelector("header img");
-var sidebar = document.querySelector("aside");
+var sidebar = document.querySelector("#info");
+var shareSheet = document.querySelector("#shareSheet");
 var eyeStatus = "on";
 
 /* --------------------------------------------------------------------------------------------------
@@ -60,12 +61,12 @@ function openSidebar() {
 function share() {
     if (navigator.share) {
         navigator.share({
-            title: 'Dein digitaler Daruma',
-            url: 'https://tehes.github.io/daruma/'
+            title: "Dein digitaler Daruma",
+            url: "https://tehes.github.io/daruma/",
+            text: "Ich möchte dir diesen Daruma schenken."
         })
     } else {
-        // show share modal
-        console.log("clicked");
+        shareSheet.classList.toggle("show");
     }
 }
 

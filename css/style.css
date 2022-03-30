@@ -16,8 +16,8 @@ html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     margin: 0;
     padding: 0;
-	/* mobile viewport bug fix */
-	height: -webkit-fill-available;
+    /* mobile viewport bug fix */
+    height: -webkit-fill-available;
 }
 
 body {
@@ -27,11 +27,11 @@ body {
     color: var(--font-color);
     font-size: 100%;
     font-family: 'Merriweather', serif;
-	min-height: 100vh;
-	/* mobile viewport bug fix */
-	min-height: -webkit-fill-available;
-	display: flex;
-	flex-direction: column;
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
 }
 
 ol, li, p, h2, header, main, footer {
@@ -61,14 +61,13 @@ a:link, a:visited {
 HEADER
 -------------------------------------------------------------------
 */
-
 header {
     width: 100%;
     max-width: 100vw;
     display: flex;
     padding: 10px 20px;
     justify-content: space-between;
-	flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 header img {
@@ -77,40 +76,52 @@ header img {
 }
 
 label.hamburger {
-   display: block;
-   width: 55px;
-   height: 50px;
-   position: relative;
-   border-radius: 4px;
-   z-index: 2000;
-   cursor: pointer;
+    display: block;
+    width: 55px;
+    height: 50px;
+    position: relative;
+    border-radius: 4px;
+    z-index: 2000;
+    cursor: pointer;
 }
 
-input#hamburger {display:none}
+input#hamburger {
+    display: none
+}
 
 .line {
-   position: absolute;
-   height: 4px; width: 55px;
-   background: var(--font-color); border-radius: 2px;
-   display: block;
-   transition: 0.5s;
-   transform-origin: center;
+    position: absolute;
+    height: 4px;
+    width: 55px;
+    background: var(--font-color);
+    border-radius: 2px;
+    display: block;
+    transition: 0.5s;
+    transform-origin: center;
 }
 
-.line:nth-child(1) { top: 12px; }
-.line:nth-child(2) { top: 24px; }
-.line:nth-child(3) { top: 36px; }
-
-#hamburger:checked + .hamburger .line:nth-child(1){
-   transform: translateY(12px) rotate(-45deg);
+.line:nth-child(1) {
+    top: 12px;
 }
 
-#hamburger:checked + .hamburger .line:nth-child(2){
-   opacity:0;
+.line:nth-child(2) {
+    top: 24px;
 }
 
-#hamburger:checked + .hamburger .line:nth-child(3){
-   transform: translateY(-12px) rotate(45deg);
+.line:nth-child(3) {
+    top: 36px;
+}
+
+#hamburger:checked+.hamburger .line:nth-child(1) {
+    transform: translateY(12px) rotate(-45deg);
+}
+
+#hamburger:checked+.hamburger .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger:checked+.hamburger .line:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
 }
 
 /*
@@ -119,13 +130,13 @@ MAIN
 -------------------------------------------------------------------
 */
 main {
-	margin: 0 5vmin 5vmin 5vmin;
+    margin: 0 5vmin 5vmin 5vmin;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-size: 1.2rem;
-	flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 select {
@@ -139,8 +150,8 @@ select {
     background-color: var(--bg-input);
     width: 40vmin;
     font-family: 'Merriweather', serif;
-	min-width: 350px;
-	color: var(--font-color);
+    min-width: 350px;
+    color: var(--font-color);
 }
 
 /*
@@ -148,14 +159,13 @@ select {
 DARUMA
 -------------------------------------------------------------------
 */
-
 #daruma {
     position: relative;
 }
 
 #daruma img {
     width: 40vmin;
-	min-width: 350px;
+    min-width: 350px;
 }
 
 #daruma div {
@@ -163,9 +173,9 @@ DARUMA
     background-color: hsl(var(--achromatic), 20%);
     border-radius: 50%;
     width: 6%;
-	aspect-ratio: 1/1;
-	min-width: 18px;
-	min-height: 18px;
+    aspect-ratio: 1/1;
+    min-width: 18px;
+    min-height: 18px;
     opacity: 0;
     cursor: crosshair;
 }
@@ -189,7 +199,6 @@ DARUMA
 WISH
 -------------------------------------------------------------------
 */
-
 #wish {
     font-family: 'Amatic SC', cursive;
     font-weight: 700;
@@ -202,6 +211,10 @@ WISH
     border-bottom: 2px dashed var(--font-color);
 }
 
+#wish img {
+    filter: invert(30%);
+}
+
 #wish span {
     margin-right: 1vmin;
 }
@@ -211,7 +224,7 @@ WISH
 }
 
 #wish span:empty::before {
-  content: "Schreibe dein Ziel oder deinen Wunsch hier auf";
+    content: "Schreibe dein Ziel oder deinen Wunsch hier auf";
 }
 
 /*
@@ -219,24 +232,23 @@ WISH
 SIDE NAVIGATION
 -------------------------------------------------------------------
 */
-
-aside {
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  height: -webkit-fill-available;
-  width: 350px;
-  position: absolute;
-  z-index: 1000;
-  top: 0;
-  left: -350px;
-  background-color: hsla(60, 50%, 95%, 0.95);
-  padding-top: 75px;
-  padding-left: 30px;
-  padding-right: 10px;
-  transition: 0.5s;
+#info {
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    height: -webkit-fill-available;
+    width: 350px;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: -350px;
+    background-color: hsla(60, 50%, 95%, 0.95);
+    padding-top: 75px;
+    padding-left: 30px;
+    padding-right: 10px;
+    transition: 0.5s;
 }
 
-.open {
+#info.open {
     left: 0;
 }
 
@@ -252,10 +264,38 @@ ol li {
 
 /*
 -------------------------------------------------------------------
+Share Sheet
+-------------------------------------------------------------------
+*/
+#shareSheet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 320px;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-input);
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+#shareSheet img {
+    filter: invert(30%);
+}
+
+#shareSheet a {
+    margin: 0 10px;
+}
+
+#shareSheet.show {
+    display: block;
+}
+
+/*
+-------------------------------------------------------------------
 FOOTER
 -------------------------------------------------------------------
 */
-
 footer {
     background-color: hsl(var(--achromatic), 20%);
     padding: 2vmin;
@@ -263,7 +303,7 @@ footer {
     font-size: 0.8rem;
     width: 100%;
     max-width: 100vw;
-	flex: 0 0 auto;
+    flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -280,17 +320,21 @@ MEDIA QUERIES
 -------------------------------------------------------------------
 */
 @media (hover: hover) {
-	header img:hover {
-    	filter: invert(45%);
-	}
+    header img:hover {
+        filter: invert(45%);
+    }
 
-	#wish:hover {
-    	background-color: var(--bg-input);
-	}
+    #wish:hover {
+        background-color: var(--bg-input);
+    }
 
-	footer img:hover {
-    	filter: invert(45%);
-	}
+    footer img:hover {
+        filter: invert(45%);
+    }
+
+    #shareSheet img:hover {
+        filter: invert(45%);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
