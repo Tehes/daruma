@@ -73,6 +73,7 @@ header {
 
 header img {
     filter: invert(30%);
+    cursor: pointer;
 }
 
 label.hamburger {
@@ -82,6 +83,7 @@ label.hamburger {
    position: relative;
    border-radius: 4px;
    z-index: 2000;
+   cursor: pointer;
 }
 
 input#hamburger {display:none}
@@ -281,11 +283,11 @@ MEDIA QUERIES
 	header img:hover {
     	filter: invert(45%);
 	}
-	
+
 	#wish:hover {
     	background-color: var(--bg-input);
 	}
-	
+
 	footer img:hover {
     	filter: invert(45%);
 	}
