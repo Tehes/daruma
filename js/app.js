@@ -11,7 +11,7 @@ var hamburgerIcon = document.querySelector("#hamburger");
 var shareIcon = document.querySelector("header img");
 var sidebar = document.querySelector("#info");
 var shareSheet = document.querySelector("#shareSheet");
-var eyeStatus = "on";
+var eyeStatus;
 
 /* --------------------------------------------------------------------------------------------------
 functions
@@ -39,6 +39,8 @@ function hideText() {
     eyeStatus = (eyeStatus === "on") ? "off" : "on";
     wishInput.classList.toggle("hide");
     wishButton.src = "svg/eye-" + eyeStatus + ".svg";
+
+    localStorage.setItem("Daruma_eyeStatus", eyeStatus);
 }
 
 function loadStoredValues() {
@@ -46,6 +48,13 @@ function loadStoredValues() {
     leftEye.className = localStorage.getItem("Daruma_leftEye") || '';
     rightEye.className = localStorage.getItem("Daruma_rightEye") || '';
     colorSelector.selectedIndex = localStorage.getItem("Daruma_colorIndex") || 0;
+
+    eyeStatus = localStorage.getItem("Daruma_eyeStatus") || 'on';
+    if (eyeStatus === "off") {
+        wishInput.classList.add("hide");
+    }
+    wishButton.src = "svg/eye-" + eyeStatus + ".svg";
+
     var color = localStorage.getItem("Daruma_color") || 'red';
     daruma.src = "svg/daruma-" + color + ".svg";
     if (localStorage.getItem("Daruma_visited") !== "yes") {
