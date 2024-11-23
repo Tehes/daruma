@@ -56,6 +56,18 @@ function hideText() {
     localStorage.setItem("Daruma_eyeStatus", eyeStatus);
 }
 
+function showTextOnFocus() {
+    if (eyeStatus === "off") {
+        let originalText = wishInput.getAttribute("data-original-text");
+        wishInput.textContent = originalText || '';
+        wishInput.removeAttribute("data-original-text");
+        wishButton.src = "svg/eye-on.svg";
+
+        eyeStatus = "on";
+        localStorage.setItem("Daruma_eyeStatus", eyeStatus);
+    }
+}
+
 function loadStoredValues() {
     let savedWish = localStorage.getItem("Daruma_wish") || '';
     wishInput.textContent = savedWish;
@@ -107,6 +119,7 @@ function init() {
     leftEye.addEventListener("click", paintEye, false);
     rightEye.addEventListener("click", paintEye, false);
     wishInput.addEventListener("blur", saveWish, false);
+    wishInput.addEventListener("focus", showTextOnFocus, false);
     wishButton.addEventListener("click", hideText, false);
     colorSelector.addEventListener("change", changeColor, false);
     hamburgerIcon.addEventListener("click", toggleNav, false);
