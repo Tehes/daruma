@@ -124,13 +124,17 @@ input#hamburger {
     transform: translateY(-12px) rotate(45deg);
 }
 
+#hamburger:checked+.hamburger {
+    background-color: hsl(60, 50%, 95%);
+}
+
 /*
 -------------------------------------------------------------------
 MAIN
 -------------------------------------------------------------------
 */
 main {
-    margin: 0 5vmin 5vmin 5vmin;
+    margin: 0 4vmin 4vmin 4vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +237,7 @@ SIDE NAVIGATION
 -------------------------------------------------------------------
 */
 #info {
-    min-height: 100vh;
+    min-height: 100dvh;
     /* mobile viewport bug fix */
     height: -webkit-fill-available;
     width: 350px;
@@ -241,11 +245,14 @@ SIDE NAVIGATION
     z-index: 1000;
     top: 0;
     left: -350px;
-    background-color: hsla(60, 50%, 95%, 0.95);
+    background-color: hsla(60, 50%, 95%, 0.9);
     padding-top: 75px;
     padding-left: 30px;
     padding-right: 10px;
+    padding-bottom: 20px;
     transition: 0.5s;
+    overflow-y: scroll;
+    backdrop-filter: blur(8px);
 }
 
 #info.open {
