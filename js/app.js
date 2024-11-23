@@ -16,19 +16,19 @@ var eyeStatus;
 /* --------------------------------------------------------------------------------------------------
 functions
 ---------------------------------------------------------------------------------------------------*/
-function paintEye() {
-    event.currentTarget.classList.toggle("visible");
-    localStorage.setItem("Daruma_" + event.currentTarget.id, event.currentTarget.className);
+function paintEye(ev) {
+    ev.currentTarget.classList.toggle("visible");
+    localStorage.setItem("Daruma_" + ev.currentTarget.id, ev.currentTarget.className);
 }
 
-function saveWish() {
-    localStorage.setItem("Daruma_wish", event.currentTarget.textContent);
+function saveWish(ev) {
+    localStorage.setItem("Daruma_wish", ev.currentTarget.textContent);
 }
 
-function changeColor() {
-    daruma.src = "svg/daruma-" + event.currentTarget.value + ".svg";
-    localStorage.setItem("Daruma_colorIndex", event.currentTarget.selectedIndex);
-    localStorage.setItem("Daruma_color", event.currentTarget.value);
+function changeColor(ev) {
+    daruma.src = "svg/daruma-" + ev.currentTarget.value + ".svg";
+    localStorage.setItem("Daruma_colorIndex", ev.currentTarget.selectedIndex);
+    localStorage.setItem("Daruma_color", ev.currentTarget.value);
 }
 
 function toggleNav() {
@@ -40,23 +40,42 @@ function hideText() {
     wishInput.classList.toggle("hide");
     wishButton.src = "svg/eye-" + eyeStatus + ".svg";
 
+    if (eyeStatus === "off") {
+        let originalText = wishInput.textContent;
+        wishInput.setAttribute("data-original-text", originalText);
+        let obfuscatedText = originalText.replace(/\S/g, "•");
+        wishInput.textContent = obfuscatedText;
+
+        localStorage.setItem("Daruma_wish", originalText);
+    } else {
+        let originalText = wishInput.getAttribute("data-original-text");
+        wishInput.textContent = originalText || '';
+        wishInput.removeAttribute("data-original-text");
+    }
+
     localStorage.setItem("Daruma_eyeStatus", eyeStatus);
 }
 
 function loadStoredValues() {
-    wishInput.textContent = localStorage.getItem("Daruma_wish") || '';
+    let savedWish = localStorage.getItem("Daruma_wish") || '';
+    wishInput.textContent = savedWish;
+
+    eyeStatus = localStorage.getItem("Daruma_eyeStatus") || 'on';
+    if (eyeStatus === "off") {
+        wishInput.setAttribute("data-original-text", savedWish);
+
+        let obfuscatedText = savedWish.replace(/\S/g, "•");
+        wishInput.textContent = obfuscatedText;
+    }
+    wishButton.src = "svg/eye-" + eyeStatus + ".svg";
+
     leftEye.className = localStorage.getItem("Daruma_leftEye") || '';
     rightEye.className = localStorage.getItem("Daruma_rightEye") || '';
     colorSelector.selectedIndex = localStorage.getItem("Daruma_colorIndex") || 0;
 
-    eyeStatus = localStorage.getItem("Daruma_eyeStatus") || 'on';
-    if (eyeStatus === "off") {
-        wishInput.classList.add("hide");
-    }
-    wishButton.src = "svg/eye-" + eyeStatus + ".svg";
-
     var color = localStorage.getItem("Daruma_color") || 'red';
     daruma.src = "svg/daruma-" + color + ".svg";
+
     if (localStorage.getItem("Daruma_visited") !== "yes") {
         openSidebar();
     }
